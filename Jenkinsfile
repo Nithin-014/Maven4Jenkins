@@ -6,21 +6,15 @@ pipeline {
         }
     }
 
-    environment {
-        // You can set environment variables here if needed
-    }
-
     stages {
         stage('Checkout Code') {
             steps {
-                // Clone the repo
                 git 'https://github.com/Mo-Faraan/Maven4Jenkins.git'
             }
         }
 
         stage('Build Package') {
             steps {
-                // Clean and package the Maven project
                 sh 'mvn clean package'
             }
         }
